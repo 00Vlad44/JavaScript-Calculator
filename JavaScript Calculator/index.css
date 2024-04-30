@@ -1,0 +1,67 @@
+/* General settings applied to all elements and pseudo-elements for consistent box-sizing and typography */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+}
+
+/* Body styling with zero margin and padding and a gradient background */
+body {
+    background: black;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the calculator grid layout with center alignment and specific row/column sizing */
+.calculator-grid {
+    align-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Default button styling within the calculator grid with interactive cursor and transparency effects */
+.calculator-grid > button {
+    background-color: rgba(255, 255, 255, .75);
+    border: 1px solid white;
+    cursor: pointer;
+    font-size: 2rem;
+    outline: none;
+}
+
+/* Hover effect for buttons to increase visibility and interactivity */
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+/* Styling for a button that spans two columns */
+.span-two {
+    grid-column: span 2;
+}
+
+/* Styling for the output display area with custom alignment and text formatting */
+.output {
+    align-items: flex-end;
+    background-color: rgba(253, 99, 78, 0.75);
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / -1;
+    justify-content: space-around;
+    padding: 10px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/* Styling for displaying previous operands with reduced emphasis */
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+/* Styling for displaying current operands with higher emphasis */
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
